@@ -4,11 +4,12 @@ FROM golang:1.23.4-alpine
 
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
+COPY . .
+# COPY go.mod ./
+# COPY go.sum ./
 RUN go mod download
 
-COPY *.go ./
+# COPY *.go ./
 
 RUN go build -o /go-gin-test
 
